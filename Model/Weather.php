@@ -98,7 +98,7 @@ class Weather extends AbstractModel implements WeatherInterface
     }
 
     /**
-     * Wind speed (Default m/s)
+     * Wind speed (m/s)
      * @inheritDoc
      */
     public function getWindSpd(): float
