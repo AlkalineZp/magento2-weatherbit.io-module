@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weather_weatherbit>
+            <api_config>
+                <api_key>c0b4dcbe811449749f8eeed8b65a4fe4</api_key>
+                <city>Lublin</city>
+                <country_code>PL</country_code>
+            </api_config>
+        </weather_weatherbit>
+    </default>
+</config>
