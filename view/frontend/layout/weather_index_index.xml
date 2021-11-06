@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <container name="weather.wrapper" htmlTag="div" htmlClass="weather-wrapper">
+                <block class="Magento\Framework\View\Element\Template"
+                       name="weather.show"
+                       template="Weather_WeatherBit::index.phtml">
+                    <arguments>
+                        <argument name="view_model" xsi:type="object">
+                            Weather\WeatherBit\ViewModel\Weather
+                        </argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>
