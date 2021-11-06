@@ -1,0 +1,30 @@
+{
+    "weather": {
+        "column": {
+            "entity_id": true,
+            "city_name": true,
+            "country_code": true,
+            "state_code": true,
+            "lat": true,
+            "lon": true,
+            "sunrise": true,
+            "sunset": true,
+            "pres": true,
+            "slp": true,
+            "wind_spd": true,
+            "wind_dir": true,
+            "wind_cdir": true,
+            "wind_cdir_full": true,
+            "temp": true,
+            "app_temp": true,
+            "rh": true,
+            "clouds": true,
+            "weather_icon": true,
+            "weather_description": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
