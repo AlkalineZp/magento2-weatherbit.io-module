@@ -5,22 +5,26 @@
         <column xsi:type="varchar" name="city_name" nullable="false" length="255" comment="City name"/>
         <column xsi:type="varchar" name="country_code" nullable="false" length="30" comment="Country abbreviation"/>
         <column xsi:type="varchar" name="state_code" nullable="false" length="30" comment="State abbreviation/code"/>
-        <column xsi:type="decimal" name="lat" nullable="false" scale="4" precision="12" comment="Latitude (Degrees)" />
-        <column xsi:type="decimal" name="lon" nullable="false" scale="4" precision="12" comment="Longitude (Degrees)" />
+        <column xsi:type="decimal" name="lat" nullable="false" scale="4" precision="12" comment="Latitude (Degrees)"/>
+        <column xsi:type="decimal" name="lon" nullable="false" scale="4" precision="12" comment="Longitude (Degrees)"/>
         <column xsi:type="varchar" name="sunrise" nullable="false" length="10" comment="Sunrise time (HH:MM)"/>
         <column xsi:type="varchar" name="sunset" nullable="false" length="10" comment="Sunset time (HH:MM)"/>
-        <column xsi:type="decimal" name="pres" nullable="false" scale="4" precision="12" comment="Pressure (mb)" />
-        <column xsi:type="decimal" name="slp" nullable="false" scale="4" precision="12" comment="Sea level pressure (mb)" />
-        <column xsi:type="decimal" name="wind_spd" nullable="false" scale="4" precision="12" comment="Wind speed (m/s)" />
-        <column xsi:type="int" name="wind_dir" nullable="false" padding="10" comment="Wind direction (degrees)" />
+        <column xsi:type="decimal" name="pres" nullable="false" scale="4" precision="12" comment="Pressure (mb)"/>
+        <column xsi:type="decimal" name="slp" nullable="false" scale="4" precision="12"
+                comment="Sea level pressure (mb)"/>
+        <column xsi:type="decimal" name="wind_spd" nullable="false" scale="4" precision="12"
+                comment="Wind speed (m/s)"/>
+        <column xsi:type="int" name="wind_dir" nullable="false" padding="10" comment="Wind direction (degrees)"/>
         <column xsi:type="varchar" name="wind_cdir" nullable="false" length="30" comment="Abbreviated wind direction"/>
         <column xsi:type="varchar" name="wind_cdir_full" nullable="false" length="255" comment="Verbal wind direction"/>
-        <column xsi:type="int" name="temp" nullable="false" padding="10" comment="Temperature (Celcius)" />
-        <column xsi:type="int" name="app_temp" nullable="false" padding="10" comment="Apparent/Feels Like temperature (Celcius)" />
-        <column xsi:type="int" name="rh" nullable="false" padding="10" comment="Relative humidity (%)" />
-        <column xsi:type="int" name="clouds" nullable="false" padding="10" comment="Cloud coverage (%)" />
+        <column xsi:type="int" name="temp" nullable="false" padding="10" comment="Temperature (Celcius)"/>
+        <column xsi:type="int" name="app_temp" nullable="false" padding="10"
+                comment="Apparent/Feels Like temperature (Celcius)"/>
+        <column xsi:type="int" name="rh" nullable="false" padding="10" comment="Relative humidity (%)"/>
+        <column xsi:type="int" name="clouds" nullable="false" padding="10" comment="Cloud coverage (%)"/>
         <column xsi:type="varchar" name="weather_icon" nullable="false" length="30" comment="Weather icon code"/>
-        <column xsi:type="varchar" name="weather_description" nullable="false" length="255" comment="Text weather description"/>
+        <column xsi:type="varchar" name="weather_description" nullable="false" length="255"
+                comment="Text weather description"/>
         <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
                 comment="Created At"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">

@@ -11,7 +11,6 @@ use GuzzleHttp\Psr7\ResponseFactory;
 use Magento\Framework\Webapi\Rest\Request;
 use Weather\WeatherBit\Model\Config;
 
-
 class WeatherApiService
 {
     /**

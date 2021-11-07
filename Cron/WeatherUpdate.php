@@ -53,7 +53,7 @@ class WeatherUpdate
     {
         $weatherApiResponse = $this->apiService->getWeather();
         $weatherArray = $this->json->unserialize($weatherApiResponse);
-        if(!isset($weatherArray['data'])) {
+        if (!isset($weatherArray['data'])) {
             return false;
         }
         $weatherData = $weatherArray['data'][0];

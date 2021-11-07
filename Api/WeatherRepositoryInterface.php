@@ -46,5 +46,4 @@ interface WeatherRepositoryInterface
      * @throws StateException
      */
     public function deleteById(int $entityId): bool;
-
 }

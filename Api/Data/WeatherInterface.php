@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Weather\WeatherBit\Api\Data;
 
-
 interface WeatherInterface
 {
     const TABLE_NAME = 'weather';
@@ -244,5 +243,4 @@ interface WeatherInterface
      * @return WeatherInterface
      */
     public function setWeatherDescription(string $weatherDescription): WeatherInterface;
-
 }

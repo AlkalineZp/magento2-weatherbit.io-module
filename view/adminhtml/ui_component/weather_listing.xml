@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">weather_listing.weather_listing_data_source</item>
@@ -9,7 +10,9 @@
     </argument>
     <dataSource name="weather_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="class" xsi:type="string">
+                Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider
+            </argument>
             <argument name="name" xsi:type="string">weather_listing_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
             <argument name="requestFieldName" xsi:type="string">entity_id</argument>
@@ -29,7 +32,7 @@
         <bookmark name="bookmarks"/>
         <columnsControls name="columns_controls"/>
         <paging name="listing_paging"/>
-        <filters name="listing_filters" />
+        <filters name="listing_filters"/>
     </listingToolbar>
     <columns name="weather_listing_columns">
         <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date">
