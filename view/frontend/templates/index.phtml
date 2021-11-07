@@ -1,1 +1,39 @@
-<h1>Weather</h1>
+<?php
+/**
+ * @var Magento\Framework\Escaper $escaper
+ * @var Magento\Framework\View\Element\Template $block
+ * @var Weather\WeatherBit\ViewModel\Weather $viewModel
+ */
+$viewModel = $block->getData('view_model');
+$weather = $viewModel->getWeather();
+?>
+<div class="weather-content">
+    <div class="image-container">
+        <img src="<?= $viewModel->getIconSrc($weather->getWeatherIcon()) ?>"
+             alt="<?= $escaper->escapeHtml(__($weather->getWeatherDescription())) ?>"/>
+        <p><?= $escaper->escapeHtml(__($weather->getWeatherDescription())) ?></p>
+    </div>
+    <div class="main-info">
+        <div class="city-info">
+            <h3><?= $escaper->escapeHtml(__($weather->getCityName())) ?></h3>
+            <p>
+                <?= __('Sunrise: ') . $escaper->escapeHtml(__($weather->getSunrise())) ?>
+                <?= __('Sunset:  ') . $escaper->escapeHtml(__($weather->getSunset())) ?>
+            </p>
+        </div>
+        <div class="weather-info">
+            <div class="temperature">
+                <p><?= __('Temperature: ') . $escaper->escapeHtml(__($weather->getTemp())) . ' &deg;C' ?></p>
+                <p><?= __('Feels Like: ') . $escaper->escapeHtml(__($weather->getAppTemp())) . ' &deg;C' ?></p>
+            </div>
+            <div class="wind">
+                <p><?= __('Wind speed: ') . $escaper->escapeHtml(__($weather->getWindSpd())) . ' m/s' ?></p>
+                <p><?= __('Direction: ') . $escaper->escapeHtml(__($weather->getWindCdirFull())) ?></p>
+            </div>
+            <div class="other">
+                <p><?= __('Cloud coverage: ') . $escaper->escapeHtml(__($weather->getClouds())) . ' %' ?></p>
+                <p><?= __('Relative humidity: ') . $escaper->escapeHtml(__($weather->getRh())) . ' %' ?></p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+.weather-content {
+    display: flex;
+    width: 100%;
+    margin: auto;
+
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 40px;
+
+        .weather-info {
+            display: flex;
+
+            .temperature, .wind, .other {
+                padding-right: 20px;
+            }
+        }
+    }
+}

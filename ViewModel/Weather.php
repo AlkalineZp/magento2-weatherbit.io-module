@@ -12,11 +12,21 @@ use Weather\WeatherBit\Api\Data\WeatherInterface;
 
 class Weather implements ArgumentInterface
 {
+    const WEATHER_ICON_BASE_URI = 'https://www.weatherbit.io/static/img/icons/';
+
     /**
      * @var WeatherRepository
      */
     private WeatherRepository $weatherRepository;
+
+    /**
+     * @var SearchCriteriaBuilder
+     */
     private SearchCriteriaBuilder $searchCriteriaBuilder;
+
+    /**
+     * @var SortOrderBuilder
+     */
     private SortOrderBuilder $sortOrderBuilder;
 
     /**
@@ -46,8 +56,13 @@ class Weather implements ArgumentInterface
             ->create();
         $weatherItems = $this->weatherRepository->getList($searchCriteria)->getItems();
         /** @var WeatherInterface $weather */
-        $weather = $weatherItems[0];
+        $weather = array_shift($weatherItems);
 
         return $weather;
+    }
+
+    public function getIconSrc(string $weatherIcon): string
+    {
+        return self::WEATHER_ICON_BASE_URI . $weatherIcon . '.png';
     }
 }
