@@ -10,25 +10,46 @@ use Magento\Framework\Serialize\Serializer\Json;
 
 class WeatherUpdate
 {
+    /**
+     * @var WeatherApiService
+     */
     private WeatherApiService $apiService;
+
+    /**
+     * @var WeatherFactory
+     */
     private WeatherFactory $weatherFactory;
+
+    /**
+     * @var WeatherRepository
+     */
     private WeatherRepository $weatherRepository;
+
+    /**
+     * @var Json
+     */
     private Json $json;
 
+    /**
+     * WeatherUpdate constructor.
+     * @param WeatherApiService $apiService
+     * @param WeatherFactory $weatherFactory
+     * @param WeatherRepository $weatherRepository
+     * @param Json $json
+     */
     public function __construct(
         WeatherApiService $apiService,
         WeatherFactory $weatherFactory,
         WeatherRepository $weatherRepository,
         Json $json
     ) {
-
         $this->apiService = $apiService;
         $this->weatherFactory = $weatherFactory;
         $this->weatherRepository = $weatherRepository;
         $this->json = $json;
     }
 
-    public function execute()
+    public function execute(): bool
     {
         $weatherApiResponse = $this->apiService->getWeather();
         $weatherArray = $this->json->unserialize($weatherApiResponse);
@@ -59,7 +80,7 @@ class WeatherUpdate
         try {
             $this->weatherRepository->save($weather);
         } catch (\Exception $e) {
-
+            return false;
         }
     }
 
