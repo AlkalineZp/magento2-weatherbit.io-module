@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Weather_WeatherBit::weather"
+             title="Weather"
+             module="Weather_WeatherBit"
+             sortOrder="51"
+             resource="Weather_WeatherBit::weather"/>
+        <add id="Weather_WeatherBit::weather_grid"
+             title="Weather Listing"
+             module="Weather_WeatherBit"
+             sortOrder="10"
+             action="weather/index/index"
+             resource="Weather_WeatherBit::weather"
+             parent="Weather_WeatherBit::weather"/>
+        <add id="Weather_WeatherBit::weather_configuration"
+             title="Configuration"
+             module="Weather_WeatherBit"
+             sortOrder="99"
+             parent="Weather_WeatherBit::weather"
+             action="adminhtml/system_config/edit/section/weather_weatherbit"
+             resource="Weather_WeatherBit::weather_weatherbit_configuration"/>
+    </menu>
+</config>
