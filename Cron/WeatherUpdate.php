@@ -52,10 +52,10 @@ class WeatherUpdate
     public function execute(): bool
     {
         $weatherApiResponse = $this->apiService->getWeather();
-        $weatherArray = $this->json->unserialize($weatherApiResponse);
-        if (!isset($weatherArray['data'])) {
+        if (!$weatherApiResponse) {
             return false;
         }
+        $weatherArray = $this->json->unserialize($weatherApiResponse);
         $weatherData = $weatherArray['data'][0];
         $weather = $this->weatherFactory->create();
         $weather->setCityName($weatherData['city_name'])

@@ -10,6 +10,7 @@ use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\ResponseFactory;
 use Magento\Framework\Webapi\Rest\Request;
 use Weather\WeatherBit\Model\Config;
+use Psr\Log\LoggerInterface as Logger;
 
 class WeatherApiService
 {
@@ -39,20 +40,28 @@ class WeatherApiService
     private Config $config;
 
     /**
+     * @var Logger
+     */
+    private Logger $logger;
+
+    /**
      * GitApiService constructor
      *
      * @param ClientFactory $clientFactory
      * @param ResponseFactory $responseFactory
      * @param Config $config
+     * @param Logger $logger
      */
     public function __construct(
         ClientFactory $clientFactory,
         ResponseFactory $responseFactory,
-        Config $config
+        Config $config,
+        Logger $logger
     ) {
         $this->clientFactory = $clientFactory;
         $this->responseFactory = $responseFactory;
         $this->config = $config;
+        $this->logger = $logger;
     }
 
     /**
@@ -97,6 +106,7 @@ class WeatherApiService
                 'status' => $exception->getCode(),
                 'reason' => $exception->getMessage()
             ]);
+            $this->logger->critical($exception->getMessage());
         }
 
         return $response;

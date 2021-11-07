@@ -44,7 +44,7 @@ class Weather implements ArgumentInterface
         $this->sortOrderBuilder = $sortOrderBuilder;
     }
 
-    public function getWeather(): WeatherInterface
+    public function getWeather(): ?WeatherInterface
     {
         $sortOrder = $this->sortOrderBuilder
             ->setField(WeatherInterface::CREATED_AT)

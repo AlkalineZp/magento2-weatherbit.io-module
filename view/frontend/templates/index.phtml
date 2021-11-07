@@ -7,6 +7,7 @@
 $viewModel = $block->getData('view_model');
 $weather = $viewModel->getWeather();
 ?>
+<?php if($weather): ?>
 <div class="weather-content">
     <div class="image-container">
         <img src="<?= $viewModel->getIconSrc($weather->getWeatherIcon()) ?>"
@@ -37,3 +38,6 @@ $weather = $viewModel->getWeather();
         </div>
     </div>
 </div>
+<?php else: ?>
+    <h2><?= __('Sorry, no weather data yet. Try to refresh the page in 10 minutes') ?></h2>
+<?php endif; ?>
